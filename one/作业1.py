@@ -27,7 +27,7 @@ def cango(stu):
             return False
 
 def test():
-    nameList=['李华','王雨','张三','Martin','Rico']
+    nameList=['李华','深蓝','张三','Martin','Rico']
     stulist=[]
     admission=[]
     for i in range(5):
