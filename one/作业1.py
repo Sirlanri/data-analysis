@@ -2,11 +2,11 @@ import os
 import random
 
 class Student(object):
-    # 类的两个属性
+    # 学生类的两个属性
     name = ''
     age = 0
-    # 初始化函数，赋值
 
+    # 初始化函数，赋值
     def __init__(self, name, age):
         self.name = name
         self.age = age
