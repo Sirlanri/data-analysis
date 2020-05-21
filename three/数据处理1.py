@@ -13,5 +13,9 @@ def chuangjian():
 
     print()
 
+def datacaluate():
+    #时间的计算
+    res = pd.to_datetime('2020-5-21')-pd.to_datetime('2000-1-25')
+    print(res)
 
-chuangjian()
+datacaluate()
