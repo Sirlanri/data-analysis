@@ -2,6 +2,7 @@ import os
 import numpy as np
 import matplotlib as plt
 import sklearn
+
 #构建数据
 def build_data():
     dirname="five/trainingDigits/"
