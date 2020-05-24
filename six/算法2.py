@@ -14,7 +14,7 @@ def build_data():
     con = pymysql.connect(host="127.0.0.1", user="root",
                           password="123456", db="pydata")
     #air_data_sql = pd.read_sql('select * from airdata',con)
-    return air_data
+    deal_data(air_data)
 
 
 def deal_data(air_data):
@@ -47,7 +47,8 @@ def deal_data(air_data):
     air_data = air_data.loc[:, ['L', 'R', 'F', 'M', 'C']]
     # 标准化数据
     stand = preprocessing.minmax_scale(air_data)
-    return stand
+    #调用k_means函数
+    k_means(stand,5)
 
 
 def k_means(air_data, k):
@@ -56,7 +57,7 @@ def k_means(air_data, k):
     km.fit(air_data)
     y_predict = km.predict(air_data)
     center = km.cluster_centers_
-    return y_predict, center
+    show_res(center)
 
 
 def show_res(center):
@@ -78,10 +79,8 @@ def show_res(center):
 
 
 def main():
-    data = build_data()
-    after_deal = deal_data(data)
-    y_predict, center = k_means(after_deal, 5)
-    show_res(center)
+    build_data()
+    
 
 
 main()
